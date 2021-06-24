@@ -18,4 +18,5 @@
 
 - verificar se a placa ta no padrão pra aceitar ser salva[x]
 
-- contar o tempo do carro no estacionamento[]
+- marca a hora que o carro entrou[x]
+
