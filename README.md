@@ -2,11 +2,11 @@
 
 - pegas os dados dos inputs a cada clique [x]
 
-- colocalos dentro de uma Array [x]
+- colocá-los dentro de uma Array [x]
 
 - com os dados na array criar um novo Element para cada [x]
 
-- colocar esse elemento dentro do tabela [x]
+- colocar esse element dentro do tabela [x]
 
 - não permitir ir sem os dois dados de modelo e placa [x]
 
@@ -19,4 +19,3 @@
 - verificar se a placa ta no padrão pra aceitar ser salva[x]
 
 - marca a hora que o carro entrou[x]
-
