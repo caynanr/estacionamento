@@ -36,6 +36,12 @@ function renderDom(carros) {
   });
 }
 
+function tempoEntrada() {
+  return hora;
+}
+
+function tempoTotal() {}
+
 function pegarCarro(event) {
   event.preventDefault();
   const contemDados = form[0].value && form[1].value;
@@ -47,8 +53,9 @@ function pegarCarro(event) {
   if (contemDados && (placaNova || placaAntiga)) {
     const modelo = form[0].value;
     const placa = form[1].value;
+    const tempo = tempoEntrada();
 
-    adicionarCarroArray({ modelo: modelo, placa: placa });
+    adicionarCarroArray({ modelo: modelo, placa: placa, tempo: tempo });
 
     limparForm();
   } else {
