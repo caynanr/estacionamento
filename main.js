@@ -1,17 +1,3 @@
-// pegas os dados dos inputs a cada clique [x]
-// colocalos dentro de uma Array [x]
-// com os dados na array criar um novo Element para cada [x]
-// colocar esse elemente dentro do tabela [x]
-// n permitir ir sem os dois dados de modelo e placa [x]
-
-//eu vou conseguir cadastrar o carro [x]
-//apagar e atualizar a lista de carros dentro do estacionamento [x]
-//passar o index junto num dataset e onclick(index) e pegar de volta no click[x]
-//salvar e ler os dados no localStorage[x]
-//verificar se a placa ta no padrão pra aceitar ser salva[x]
-//limpar placa para tirar qualquer caracter especial com regexp[]
-// contar o tempo do carro no estacionamento[]
-
 const form = document.querySelector(".form");
 const btnCadastro = document.querySelector(".btn-cadastro");
 const tabela = document.querySelector(".table tbody");
