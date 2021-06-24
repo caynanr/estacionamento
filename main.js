@@ -30,10 +30,20 @@ function renderDom(carros) {
     tr.innerHTML = `
     <td>${carro.modelo}</td>
     <td>${carro.placa}</td>
-    <td>Tempo</td>
+    <td class='tempo'>${carro.hora}:${carro.minutos}</td>
     <td><button onclick="deletarCarro(${index})">x</button></td>`;
     tabela.appendChild(tr);
   });
+}
+
+function horaEntrada() {
+  const hora = new Date();
+  return hora.getUTCHours() - 3;
+}
+
+function minutosEntrada() {
+  const minutos = new Date();
+  return minutos.getUTCMinutes();
 }
 
 function pegarCarro(event) {
@@ -47,8 +57,15 @@ function pegarCarro(event) {
   if (contemDados && (placaNova || placaAntiga)) {
     const modelo = form[0].value;
     const placa = form[1].value;
+    const hora = horaEntrada();
+    const minutos = minutosEntrada();
 
-    adicionarCarroArray({ modelo: modelo, placa: placa });
+    adicionarCarroArray({
+      modelo: modelo,
+      placa: placa,
+      hora: hora,
+      minutos: minutos,
+    });
 
     limparForm();
   } else {
