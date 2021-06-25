@@ -39,7 +39,7 @@ function renderDom(carros) {
 
 function horaEntrada() {
   const hora = new Date();
-  return hora.getUTCHours() - 3;
+  return hora.getHours();
 }
 
 function minutosEntrada() {
@@ -49,12 +49,14 @@ function minutosEntrada() {
 
 setInterval(() => {
   const decorrido = document.querySelectorAll(".decorrido");
-  const hora = new Date();
+  const horaAtual = new Date();
   decorrido.forEach((tempo) => {
     const horaDataset = +tempo.dataset.hora;
     const minutoDataset = +tempo.dataset.minuto;
     tempo.innerText = `${
-      (hora.getHours() - horaDataset) * 60 - minutoDataset + hora.getMinutes()
+      (horaAtual.getHours() - horaDataset) * 60 -
+      minutoDataset +
+      horaAtual.getMinutes()
     } minutos`;
   });
 }, 1000 * 60);
