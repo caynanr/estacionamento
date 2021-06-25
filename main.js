@@ -47,7 +47,7 @@ function minutosEntrada() {
   return minutos.getUTCMinutes();
 }
 
-setInterval(() => {
+function tempoEmMinutos() {
   const decorrido = document.querySelectorAll(".decorrido");
   const horaAtual = new Date();
   decorrido.forEach((tempo) => {
@@ -59,7 +59,23 @@ setInterval(() => {
       horaAtual.getMinutes()
     } minutos`;
   });
-}, 1000 * 60);
+}
+
+setInterval(tempoEmMinutos, 1000 * 60);
+
+// setInterval(() => {
+//   const decorrido = document.querySelectorAll(".decorrido");
+//   const horaAtual = new Date();
+//   decorrido.forEach((tempo) => {
+//     const horaDataset = +tempo.dataset.hora;
+//     const minutoDataset = +tempo.dataset.minuto;
+//     tempo.innerText = `${
+//       (horaAtual.getHours() - horaDataset) * 60 -
+//       minutoDataset +
+//       horaAtual.getMinutes()
+//     } minutos`;
+//   });
+// }, 1000 * 60);
 
 function pegarCarro(event) {
   event.preventDefault();
@@ -99,6 +115,7 @@ function reload() {
 function init() {
   // renderDom(carros);
   renderDom(garage);
+  tempoEmMinutos();
 }
 
 init();
