@@ -19,3 +19,5 @@
 - verificar se a placa ta no padrão pra aceitar ser salva[x]
 
 - marca a hora que o carro entrou[x]
+
+- marca o tempo que o carro ficou em minutos [x]

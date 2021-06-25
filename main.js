@@ -31,6 +31,7 @@ function renderDom(carros) {
     <td>${carro.modelo}</td>
     <td>${carro.placa}</td>
     <td class='tempo'>${carro.hora}:${carro.minutos}</td>
+    <td class="decorrido" data-hora="${carro.hora}" data-minuto="${carro.minutos}">0</td>
     <td><button onclick="deletarCarro(${index})">x</button></td>`;
     tabela.appendChild(tr);
   });
@@ -38,13 +39,27 @@ function renderDom(carros) {
 
 function horaEntrada() {
   const hora = new Date();
-  return hora.getUTCHours() - 3;
+  return hora.getHours();
 }
 
 function minutosEntrada() {
   const minutos = new Date();
   return minutos.getUTCMinutes();
 }
+
+setInterval(() => {
+  const decorrido = document.querySelectorAll(".decorrido");
+  const horaAtual = new Date();
+  decorrido.forEach((tempo) => {
+    const horaDataset = +tempo.dataset.hora;
+    const minutoDataset = +tempo.dataset.minuto;
+    tempo.innerText = `${
+      (horaAtual.getHours() - horaDataset) * 60 -
+      minutoDataset +
+      horaAtual.getMinutes()
+    } minutos`;
+  });
+}, 1000 * 60);
 
 function pegarCarro(event) {
   event.preventDefault();
