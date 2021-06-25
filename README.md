@@ -19,3 +19,5 @@
 - verificar se a placa ta no padrão pra aceitar ser salva[x]
 
 - marca a hora que o carro entrou[x]
+
+- marca o tempo que o carro fica adicionando a hora e minuto de entrada em um data set depois pegando eles subtraindo pela hora atual e colocando no innerText a cada minuto.
